@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: master
+media_folder: "src/dist/images" # Media files will be stored in the repo under images/uploads
+public_folder: "dist/images"
+collections:
+  - name: "pages"
+    label: "Pages"
+    description: "All non-unique site pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{slug}}"
+    fields: 
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Permalink", name: "permalink", widget: "string", required: false}
+      - {label: "Show In Nav", name: "show_in_nav", widget: "number", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
